@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='mainApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Angular Js Learning</title>
+</head>
+<body ng-cloak>
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" placeholder="Please enter the name" class="form-control" ng-model='name'/>
+        <h3>Entered name is :- <span ng-if='name == "" || !name'>Please enter something to see</span><span ng-if='name !== ""'>{{name}}</span></h3>
+    </div>
+    <div class="block" ng-controller='mainController'>
+        {{name}}
+        <ul>
+            <li ng-repeat='gender in genderArray'>{{gender}}</li>
+        </ul>
+    </div>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
