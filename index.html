@@ -14,9 +14,14 @@
         <h3>Entered name is :- <span ng-if='name == "" || !name'>Please enter something to see</span><span ng-if='name !== ""'>{{name}}</span></h3>
     </div>
     <div class="block" ng-controller='mainController'>
-        {{name}}
+        <!-- {{name}} -->
+        <div class="form-group">
+            <label>Seach Gender</label>
+            <input type="text" placeholder="Please enter to search" class="form-control" ng-model='searchGender'/>
+        </div>
+        
         <ul>
-            <li ng-repeat='gender in genderArray'>{{gender}}</li>
+            <li ng-repeat='gender in genderArray | filter: searchGender | orderBy: gender'>{{gender}}</li>
         </ul>
     </div>
     <!-- Latest compiled and minified CSS -->
