@@ -14,6 +14,15 @@ app.controller('mainController', ['$scope', function($scope) {
         $scope.employeeArray.splice(getEmployeeIndex, 1);
     };
 
+    $scope.addEmployee = function() {
+        $scope.employeeArray.push({
+            name: $scope.employee.name,
+            age: parseInt($scope.employee.age), 
+            available: JSON.parse($scope.employee.available),
+        });
+        $scope.employee = {};
+    };
+
     $scope.employeeArray = [{
         name: 'Sandeep',
         age: 21,
