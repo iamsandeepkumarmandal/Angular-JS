@@ -21,14 +21,15 @@
     </div>
     <div class="all-employees-wrapper row">
         <h1 class="text-center">All Employees</h1>
-        <ul class="float-left w-100 p-0 m-0">
-            <li ng-repeat='employee in employeeArray | filter: searchEmployee | orderBy: ascending+order' class="btn btn-primary float-left w-25 mb-1">{{employee.name}}
+        <ul class="float-left w-100 p-0 m-0 text-center">
+            <li ng-repeat='employee in employeeArray | filter: searchEmployee | orderBy: ascending+order' class="btn btn-primary display-inline w-25 mb-1">{{employee.name}}
                 <span class="badge badge-light">{{employee.age}}</span> <span ng-click='removeEmployee(employee)' class="float-right">X</span></span></li>
         </ul>
     </div>
     <div class="row">
         <div class="col-lg-6 offset-lg-3">
-            <form class="add-employee jumbotron" ng-submit='addEmployee()'>
+            <form class="add-employee jumbotron mt-3" ng-submit='addEmployee()'>
+                <h2 class="text-center mb-2">Add Employee</h2>
                 <div class="form-group">
                     <input type="text" placeholder="Please enter the name" class="form-control" ng-model='employee.name' />
                 </div>
