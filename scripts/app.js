@@ -9,21 +9,34 @@ app.run(function() {
 });
 // controller thats controls the data for the application/ section based on type
 app.controller('mainController', ['$scope', function($scope) {
-    $scope.name = 'Sandeep';
-    $scope.genderArray = [{
-        name: 'male',
+    $scope.removeEmployee = function(employee) {
+        const getEmployeeIndex = $scope.employeeArray.indexOf(employee);
+        $scope.employeeArray.splice(getEmployeeIndex, 1);
+    };
+
+    $scope.employeeArray = [{
+        name: 'Sandeep',
+        age: 21,
         available: true,
     },
     {
-        name: 'female',
+        name: 'Priyanka',
+        age: 22,
         available: true, 
     },
     {
-        name: 'others',
+        name: 'Abinash',
+        age: 23,
         available: true,
     },
     {
-        name: 'abc',
-        available: false,
+        name: 'Vishal',
+        age: 24,
+        available: true,
+    },
+    {
+        name: 'Hardhik',
+        age: 27,
+        available: true,
     }];
 }]);
