@@ -1,8 +1,18 @@
-var app = angular.module('mainApp', []);
-// this runs before the app is loaded
-app.config(function() {
-
-});
+var app = angular.module('mainApp', ['ngRoute']);
+// this runs before the app is loaded / application starts or runs
+app.config(['$routeProvider', function($routeProvider) {
+    $routeProvider
+        .when('/home', {
+            templateUrl: 'views/home.html',
+        })
+        .when('/employee', {
+            templateUrl: 'views/employee-list.html',
+            controller: 'mainController',
+        })
+        .otherwise({
+            redirectTo: '/home',
+        });
+}]);
 // this runs while the app is running
 app.run(function() {
 

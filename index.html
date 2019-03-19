@@ -15,60 +15,7 @@
     <!-- Other way to inject the html using html tags and directive as an attribute to make it more semantic-->
     <header ng-include="'includes/header.html'"></header>
 
-    <div class="block" ng-controller='mainController'>
-        <!-- {{name}} -->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="form-group">
-                        <label>Seach Employee</label>
-                        <input type="text" placeholder="Please enter to search" class="form-control" ng-model='searchEmployee' />
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-group text-right">
-                        <label>Sort By</label>
-                        <div class="block w-100">
-                            <button class="btn btn-primary float-left w-25" ng-click='order = "name"'>Name</button>
-                            <button class="btn btn-primary float-left w-25" ng-click='order = "age"'>Age</button>
-                            <button class="btn btn-primary float-left w-25" ng-click='ascending = ""'>Ascending</button>
-                            <button class="btn btn-primary float-left w-25" ng-click='ascending = "-"'>Descending</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="all-employees-wrapper row">
-                <h1 class="text-center">All Employees</h1>
-                <ul class="float-left w-100 p-0 m-0">
-                    <li ng-repeat='employee in employeeArray | filter: searchEmployee | orderBy: ascending+order' class="btn btn-primary float-left w-25 mb-1">{{employee.name}}
-                        <span class="badge badge-light">{{employee.age}}</span> <span ng-click='removeEmployee(employee)'
-                            class="float-right">X</span></span></li>
-                </ul>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 offset-lg-3">
-                    <form class="add-employee jumbotron" ng-submit='addEmployee()'>
-                        <div class="form-group">
-                            <input type="text" placeholder="Please enter the name" class="form-control" ng-model='employee.name'/>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" placeholder="Please enter the age" class="form-control" ng-model='employee.age'/>
-                        </div>
-                        <div class="form-group">
-                            <select class="form-control" ng-model='employee.available'>
-                                <option value="true">Available</option>
-                                <option value="false">Not Available</option>
-                            </select>
-                        </div>
-                        <div class="flat-left w-100 text-center">
-                            <input type="submit" class="btn btn-primary" value="Add Employee">
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </div>
+    <main ng-view></main>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -81,6 +28,7 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.7.7/angular-route.min.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 
