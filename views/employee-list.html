@@ -11,10 +11,10 @@
             <div class="form-group text-right">
                 <label>Sort By</label>
                 <div class="block w-100">
-                    <button class="btn btn-primary float-left w-25" ng-click='order = "name"'>Name</button>
-                    <button class="btn btn-primary float-left w-25" ng-click='order = "age"'>Age</button>
-                    <button class="btn btn-primary float-left w-25" ng-click='ascending = ""'>Ascending</button>
-                    <button class="btn btn-primary float-left w-25" ng-click='ascending = "-"'>Descending</button>
+                    <button class="btn btn-secondary float-left w-25" ng-click='order = "name"'>Name</button>
+                    <button class="btn btn-secondary float-left w-25" ng-click='order = "age"'>Age</button>
+                    <button class="btn btn-secondary float-left w-25" ng-click='ascending = ""'>Ascending</button>
+                    <button class="btn btn-secondary float-left w-25" ng-click='ascending = "-"'>Descending</button>
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
     <div class="all-employees-wrapper row">
         <h1 class="text-center">All Employees</h1>
         <ul class="float-left w-100 p-0 m-0 text-center">
-            <li ng-repeat='employee in employeeArray | filter: searchEmployee | orderBy: ascending+order' class="btn btn-primary display-inline w-25 mb-1">{{employee.name}}
+            <li ng-repeat='employee in employeeArray | filter: searchEmployee | orderBy: ascending+order' class="btn btn-info display-inline w-25 mb-1">{{employee.name}}
                 <span class="badge badge-light">{{employee.age}}</span> <span ng-click='removeEmployee(employee)' class="float-right">X</span></span></li>
         </ul>
     </div>
@@ -43,7 +43,7 @@
                     </select>
                 </div>
                 <div class="flat-left w-100 text-center">
-                    <input type="submit" class="btn btn-primary" value="Add Employee">
+                    <input type="submit" class="btn btn-success" value="Add Employee">
                 </div>
             </form>
         </div>
