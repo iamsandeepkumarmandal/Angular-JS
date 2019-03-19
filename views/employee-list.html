@@ -23,7 +23,7 @@
         <h1 class="text-center">All Employees</h1>
         <ul class="float-left w-100 p-0 m-0 text-center">
             <li ng-repeat='employee in employeeArray | filter: searchEmployee | orderBy: ascending+order' class="btn btn-info display-inline w-25 mb-1">{{employee.name}}
-                <span class="badge badge-light">{{employee.age}}</span> <span ng-click='removeEmployee(employee)' class="float-right">X</span></span></li>
+                <span class="badge badge-pill badge-light">{{employee.age}}</span> <span ng-click='removeEmployee(employee)' class="float-right">X</span></span></li>
         </ul>
     </div>
     <div class="row">
