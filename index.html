@@ -7,7 +7,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Angular Js Learning</title>
 </head>
-<body ng-cloak>
+<body>
+    <!-- One way to inject the html using angular pre defined directive
+    <ng-include src="'includes/header.html'"></ng-include> -->
+
+    <!-- Other way to inject the html using html tags and directive as an attribute to make it more semantic-->
+    <header ng-include="'includes/header.html'"></header>
     <div class="form-group">
         <label>Name</label>
         <input type="text" placeholder="Please enter the name" class="form-control" ng-model='name'/>
@@ -19,7 +24,6 @@
             <label>Seach Gender</label>
             <input type="text" placeholder="Please enter to search" class="form-control" ng-model='searchGender'/>
         </div>
-        
         <ul>
             <li ng-repeat='gender in genderArray | filter: searchGender | orderBy: gender'>{{gender}}</li>
         </ul>
