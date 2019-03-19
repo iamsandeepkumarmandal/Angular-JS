@@ -25,7 +25,7 @@
             <input type="text" placeholder="Please enter to search" class="form-control" ng-model='searchGender'/>
         </div>
         <ul>
-            <li ng-repeat='gender in genderArray | filter: searchGender | orderBy: gender'>{{gender}}</li>
+            <li ng-repeat='gender in genderArray | filter: searchGender | orderBy: gender' ng-show='gender.available'>{{gender.name}}</li>
         </ul>
     </div>
     <!-- Latest compiled and minified CSS -->
