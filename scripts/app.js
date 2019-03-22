@@ -18,7 +18,7 @@ app.run(function() {
 
 });
 // controller thats controls the data for the application/ section based on type
-app.controller('mainController', ['$scope', function($scope) {
+app.controller('mainController', ['$scope', '$http', function($scope, $http) {
     $scope.removeEmployee = function(employee) {
         const getEmployeeIndex = $scope.employeeArray.indexOf(employee);
         $scope.employeeArray.splice(getEmployeeIndex, 1);
@@ -33,6 +33,9 @@ app.controller('mainController', ['$scope', function($scope) {
         $scope.employee = {};
     };
 
+    $http.get('http://www.mocky.io/v2/5c9468c9310000e15d5548d6').then((response) => {
+        $scope.employeeArray = response.data;
+    });
     $scope.employeeArray = [{
         name: 'Sandeep',
         age: 21,
@@ -58,4 +61,6 @@ app.controller('mainController', ['$scope', function($scope) {
         age: 27,
         available: true,
     }];
+    // convert an array of objects to JSON
+    // console.log(angular.toJson($scope.employeeArray));
 }]);
