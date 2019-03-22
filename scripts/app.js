@@ -4,6 +4,7 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/home', {
             templateUrl: 'views/home.html',
+            controller: 'mainController',
         })
         .when('/employee', {
             templateUrl: 'views/employee-list.html',
@@ -63,4 +64,18 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
     }];
     // convert an array of objects to JSON
     // console.log(angular.toJson($scope.employeeArray));
+}]);
+
+app.directive('employee', [function() {
+    return  {
+        restrict: 'E',
+        scope: {
+            employees: '=',
+            title: '=',
+        },
+        templateUrl: 'views/employee.html',
+        controller: function($scope) {
+            $scope.random = Math.floor(Math.random() * 4);
+        }
+    };
 }]);
