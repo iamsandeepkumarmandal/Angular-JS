@@ -74,8 +74,12 @@ app.directive('employee', [function() {
             title: '=',
         },
         templateUrl: 'views/employee.html',
+        // to pass any other html / template into the directive defintion from the view
+        transclude: true,
+        // replace would replace the directive definition from the html rendering
+        replace: true,
         controller: function($scope) {
             $scope.random = Math.floor(Math.random() * 4);
-        }
+        },
     };
 }]);

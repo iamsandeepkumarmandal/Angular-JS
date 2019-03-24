@@ -1,3 +1,5 @@
 <div  class="btn btn-info display-inline w-25 mb-1">{{employees[random].name}}
     <span class="badge badge-pill badge-light">{{employees[random].age}}</span> 
+    <!-- To use this we have to make transclude as true i.e. (transclude:true) in the directive definition-->
+    <div ng-transclude></div>
 </div>
