@@ -1,4 +1,4 @@
-var app = angular.module('mainApp', ['ngRoute']);
+var app = angular.module('mainApp', ['ngRoute', 'ngAnimate']);
 // this runs before the app is loaded / application starts or runs
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
@@ -8,6 +8,10 @@ app.config(['$routeProvider', function($routeProvider) {
         })
         .when('/employee', {
             templateUrl: 'views/employee-list.html',
+            controller: 'mainController',
+        })
+        .when('/contact', {
+            templateUrl: 'views/contact.html',
             controller: 'mainController',
         })
         .otherwise({
@@ -64,6 +68,10 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
     }];
     // convert an array of objects to JSON
     // console.log(angular.toJson($scope.employeeArray));
+
+    $scope.removeAllEmployee = function() {
+        $scope.employeeArray = [];
+    }
 }]);
 
 app.directive('employee', [function() {
