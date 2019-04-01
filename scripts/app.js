@@ -14,6 +14,9 @@ app.config(['$routeProvider', function($routeProvider) {
             templateUrl: 'views/contact.html',
             controller: 'contactController',
         })
+        .when('/contact-success', {
+            templateUrl: 'views/contact-success.html',
+        })
         .otherwise({
             redirectTo: '/home',
         });
@@ -74,8 +77,11 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
     }
 }]);
 
-app.controller('contactController', ['$scope', function($scope) {
+app.controller('contactController', ['$scope', '$location', function($scope, $location) {
     $scope.pageTitle = 'contact page';
+    $scope.sendMessage = function() {
+        $location.path('/contact-success');
+    }
 }]);
 
 
