@@ -1,6 +1,7 @@
 var app = angular.module('mainApp', ['ngRoute', 'ngAnimate']);
 // this runs before the app is loaded / application starts or runs
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider','$locationProvider', function($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider
         .when('/home', {
             templateUrl: 'views/home.html',
