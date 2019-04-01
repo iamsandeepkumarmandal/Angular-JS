@@ -12,7 +12,7 @@ app.config(['$routeProvider', function($routeProvider) {
         })
         .when('/contact', {
             templateUrl: 'views/contact.html',
-            controller: 'mainController',
+            controller: 'contactController',
         })
         .otherwise({
             redirectTo: '/home',
@@ -73,6 +73,11 @@ app.controller('mainController', ['$scope', '$http', function($scope, $http) {
         $scope.employeeArray = [];
     }
 }]);
+
+app.controller('contactController', ['$scope', function($scope) {
+    $scope.pageTitle = 'contact page';
+}]);
+
 
 app.directive('employee', [function() {
     return  {
